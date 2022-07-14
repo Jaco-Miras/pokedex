@@ -40,7 +40,7 @@ function Details() {
         <h1 className="text-3xl font-semibold mb-3">Stats</h1>
 
         {details?.stats.map(({ stat, base_stat, effort }) => (
-          <table class="border-collapse border border-slate-500 mx-auto w-full">
+          <table class="border-collapse border border-slate-500 mx-auto w-96 table-fixed">
             <thead>
               <tr>
                 <th class="border border-slate-600 ..."> Stat </th>
