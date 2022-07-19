@@ -1,24 +1,16 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../context/AppContext";
 
-function PokemonCard({ name, url }) {
+function PokemonCard({ name }) {
+  const { getPokemonDetails } = useAppContext();
   const navigate = useNavigate();
   const [details, setDetails] = useState(null);
 
   useEffect(() => {
-    if (!url) return;
-    getPokemonDetails().then((res) => setDetails(res.data));
-  }, [url]);
+    getPokemonDetails(name).then((res) => setDetails(res.data));
+  }, []);
 
-  const getPokemonDetails = async () => {
-    try {
-      const response = await axios.get(url);
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
-  };
   return (
     <div
       key={name}

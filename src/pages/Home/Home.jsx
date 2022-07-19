@@ -8,7 +8,7 @@ function Home() {
     <div className="w-full px-10 py-10">
       <div className="grid grid-cols-4 mx-auto justify-center gap-4">
         {pokemons.map(({ name, url }) => (
-          <PokemonCard key={url} name={name} url={url} />
+          <PokemonCard key={url} name={name} />
         ))}
       </div>
     </div>

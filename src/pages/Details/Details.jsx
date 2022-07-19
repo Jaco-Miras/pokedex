@@ -12,7 +12,6 @@ function Details() {
     getPokemonDetails(params.pokemon).then((res) => setDetails(res.data));
   });
 
-  console.log("details: ", details);
   return (
     <div className="grid place-items-center gap-3">
       <img src={details?.sprites.front_default} alt="" />
